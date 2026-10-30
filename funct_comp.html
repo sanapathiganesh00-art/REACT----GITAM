@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functional Components</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Header() {
+            return <h1>My Website</h1>;
+        }
+
+        function Content() {
+            return <h2>Welcome to React</h2>;
+        }
+
+        function Footer() {
+            return <p>Thank You</p>;
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <Content />
+                    <Footer />
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(
+            document.getElementById("root")
+        ).render(<App />);
+
+    </script>
+
+</body>
+</html>

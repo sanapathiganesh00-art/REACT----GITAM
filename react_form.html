@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Form</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const { useState } = React;
+
+        function App() {
+
+            const [name, setName] = useState("");
+
+            function submit(e) {
+                e.preventDefault();
+                alert("Welcome " + name);
+            }
+
+            return (
+                <div>
+                    <h1>Student Form</h1>
+
+                    <form onSubmit={submit}>
+                        <input
+                            type="text"
+                            placeholder="Enter Your Name"
+                            value={name}
+                            onChange={e => setName(e.target.value)}
+                            required
+                        />
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(
+            document.getElementById("root")
+        ).render(<App />);
+
+    </script>
+
+</body>
+</html>
